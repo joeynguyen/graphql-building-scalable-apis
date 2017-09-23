@@ -1,5 +1,5 @@
 module.exports = {
   development: {
-    database: 'contests'
-  }
+    database: 'contests',
+  },
 };
