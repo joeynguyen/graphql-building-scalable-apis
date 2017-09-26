@@ -8,5 +8,11 @@ module.exports = pgPool => (
         where api_key = $1
       `, [apiKey]).then(res => humps.camelizeKeys(res.rows[0]));
     },
+    getContests(user) {
+      return pgPool.query(`
+        select * from contests
+        where created_by = $1
+      `, [user.id]).then(res => humps.camelizeKeys(res.rows));
+    },
   }
 );
